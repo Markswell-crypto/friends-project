@@ -42,15 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
    let button1 = document.createElement("button");
    button1.textContent = "Update";
    friendsDiv.appendChild(button1);
-  console.log(button1)        
+  //console.log(button1)        
    button1.addEventListener("click", (e) => {
     e.preventDefault();
   
     // Get the updated friend data from the form.
-    // const updatedFriend = {
-    //   name: document.getElementById("namebox").value,
-    //   gender: document.getElementById("genderbox").value,
-    // };
+    
     const updatedFriend = {
       name : prompt ("Enter updated name:"),
       gender : prompt ("Enter Updated gender")

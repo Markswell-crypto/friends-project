@@ -1,8 +1,8 @@
 {
   "Friends": [
     {
-      "name": "Matt",
-      "gender": "Man",
+      "name": "Matthew",
+      "gender": "Male",
       "id": 1
     },
     {
@@ -19,6 +19,11 @@
       "name": "kingsley",
       "gender": "male",
       "id": 4
+    },
+    {
+      "name": "Morrison",
+      "gender": "Male",
+      "id": 5
     }
   ]
 }
