@@ -42,33 +42,39 @@ document.addEventListener("DOMContentLoaded", () => {
    let button1 = document.createElement("button");
    button1.textContent = "Update";
    friendsDiv.appendChild(button1);
-          
-button1.addEventListener("click", (e) =>{
-  e.preventDefault()
-  const updatedFriend = {
-    name: document.getElementById("name").value,
-    gender: document.getElementById("gender").value,
-  };
-  // const updatedFriend = {
-  //   name,
-  //   gender,
-  // };
-  fetch(`http://localhost:3000/Friends/${Friends.id}`, {
-              method: "PATCH",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(),
-            })
-            .then((res => res.json))
-            .then(result => {
-              if (result.success) {
-                alert("Friend data updated successfully!");
-              } else {
-                alert("Error updating friend data: " + result.error);
-              }
-            } )
-} )
+  console.log(button1)        
+   button1.addEventListener("click", (e) => {
+    e.preventDefault();
+  
+    // Get the updated friend data from the form.
+    // const updatedFriend = {
+    //   name: document.getElementById("namebox").value,
+    //   gender: document.getElementById("genderbox").value,
+    // };
+    const updatedFriend = {
+      name : prompt ("Enter updated name:"),
+      gender : prompt ("Enter Updated gender")
+    }
+  
+    // Make a PATCH request to update the friend data.
+    fetch(`http://localhost:3000/Friends/${Friends.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedFriend),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.success) {
+          alert("Friend data updated successfully!");
+          name.textContent = updatedFriend.name;
+          gender.textContent = updatedFriend.gender;
+        } else {
+          alert("Error updating friend data: " + result.error);
+        }
+      });
+  });
         });
 
       });
