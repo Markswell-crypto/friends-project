@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
       name : prompt ("Enter updated name:"),
       gender : prompt ("Enter Updated gender")
     }
-  
+    name.textContent
     // Make a PATCH request to update the friend data.
-    fetch(`http://localhost:3000/Friends/${Friends.id}`, {
+    fetch(`http://localhost:3000/Friends/${element.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -66,13 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        if (result.success) {
-          alert("Friend data updated successfully!");
           name.textContent = updatedFriend.name;
           gender.textContent = updatedFriend.gender;
-        } else {
-          alert("Error updating friend data: " + result.error);
-        }
+          alert("Friend data updated successfully!");
       });
   });
         });

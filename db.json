@@ -1,13 +1,13 @@
 {
   "Friends": [
     {
-      "name": "Jean",
-      "gender": "Female",
+      "name": "Matt",
+      "gender": "Man",
       "id": 1
     },
     {
-      "name": "James",
-      "gender": "Male",
+      "name": "mark",
+      "gender": "male",
       "id": 2
     },
     {
